@@ -1,0 +1,43 @@
+# Project: game
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o data.o show.o set.o control.o spy.o
+LINKOBJ  = main.o data.o show.o set.o control.o spy.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -L"C:/Users/USER/Desktop/SDL2_image-2.6.3/x86_64-w64-mingw32/lib" -L"C:/Users/USER/Desktop/SDL2-2.24.2/x86_64-w64-mingw32/lib" -L"C:/Users/USER/Desktop/SDL2_ttf-2.20.2/x86_64-w64-mingw32/lib" -static-libgcc -L"C:/Users/USER/Desktop/SDL2_ttf-2.20.2/x86_64-w64-mingw32/lib" -L"C:/Users/USER/Desktop/SDL2-2.24.2/x86_64-w64-mingw32/lib" -L"C:/Users/USER/Desktop/SDL2_image-2.6.3/x86_64-w64-mingw32/lib" -mwindows -lmingw32 -lSDL2main -lSDL2   -lmingw32 -lSDL2_image   -lmingw32 -lSDL2_ttf
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/USER/Desktop/SDL2_image-2.6.3/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/USER/Desktop/SDL2-2.24.2/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/USER/Desktop/SDL2_ttf-2.20.2/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/USER/Desktop/SDL2_ttf-2.20.2/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/USER/Desktop/SDL2-2.24.2/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/USER/Desktop/SDL2_image-2.6.3/x86_64-w64-mingw32/include/SDL2"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Users/USER/Desktop/SDL2_ttf-2.20.2/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/USER/Desktop/SDL2-2.24.2/x86_64-w64-mingw32/include/SDL2" -I"C:/Users/USER/Desktop/SDL2_image-2.6.3/x86_64-w64-mingw32/include/SDL2"
+BIN      = cy.suv.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+data.o: data.cpp
+	$(CPP) -c data.cpp -o data.o $(CXXFLAGS)
+
+show.o: show.cpp
+	$(CPP) -c show.cpp -o show.o $(CXXFLAGS)
+
+set.o: set.cpp
+	$(CPP) -c set.cpp -o set.o $(CXXFLAGS)
+
+control.o: control.cpp
+	$(CPP) -c control.cpp -o control.o $(CXXFLAGS)
+
+spy.o: spy.cpp
+	$(CPP) -c spy.cpp -o spy.o $(CXXFLAGS)
